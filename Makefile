@@ -1,4 +1,4 @@
-PROJECT_NAME = quiz
+PROJECT_NAME = #Project name here
 MAKE := make
 
 .PHONY: all clean run serve update update_pip update_bower makemigrations \ 
