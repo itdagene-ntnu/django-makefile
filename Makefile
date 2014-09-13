@@ -17,9 +17,6 @@ update: update_pip update_bower
 update_pip:
 	@echo 'Installing Python requirements'
 	@echo '------------------------------'
-# Installing Django like this until 1.7 is released
-	pip install https://www.djangoproject.com/download/1.7.b4/tarball/
-# Rest of requirements
 	pip install -r requirements.txt
 
 update_bower:
@@ -28,7 +25,7 @@ update_bower:
 	bower install
 
 makemigrations:
-	@echo 'Making migrations for all apps'
+	@echo 'Creating migrations for all apps'
 	@echo '------------------------------'
 	python manage.py makemigrations
 
@@ -44,4 +41,3 @@ setup: update
 		$(PROJECT_NAME)/settings/local.py
 	$(MAKE) migrate
 	@echo '$(PROJECT_NAME) is ready. make run to start development server.'
-
